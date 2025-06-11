@@ -2,7 +2,6 @@
 import { Scissors, Sparkles, Syringe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BlurText from '@/components/ui/blur-text';
-import MovingTicker from '@/components/ui/moving-ticker';
 import { motion } from 'framer-motion';
 
 const Services = () => {
@@ -30,50 +29,89 @@ const Services = () => {
     }
   ];
 
-  const tickerCards = [
-    { title: "5000+", subtitle: "Procedures", icon: "👨‍⚕️" },
-    { title: "98%", subtitle: "Success Rate", icon: "⭐" },
-    { title: "15+", subtitle: "Years Experience", icon: "🏆" },
-    { title: "100%", subtitle: "Safe & Secure", icon: "🛡️" },
-    { title: "24/7", subtitle: "Support", icon: "💬" },
-  ];
-
   return (
     <section id="treatments" className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <BlurText 
-            text="Premium Treatment Solutions"
-            className="text-4xl lg:text-5xl font-bold text-vshine-teal mb-6"
-            delay={80}
-            animateBy="words"
-          />
-          <BlurText 
-            text="Comprehensive hair and skin care treatments designed for men, women, and transgender individuals with advanced technology and personalized care."
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-            delay={100}
-            animateBy="words"
-          />
+        {/* Hero Section with Image */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="space-y-8">
+            <BlurText 
+              text="Premium Treatment Solutions"
+              className="text-4xl lg:text-5xl font-bold text-vshine-teal"
+              delay={80}
+              animateBy="words"
+            />
+            <BlurText 
+              text="Experience world-class hair transplantation and restoration procedures performed by certified specialists using state-of-the-art technology for natural, lasting results."
+              className="text-xl text-gray-600 leading-relaxed"
+              delay={100}
+              animateBy="words"
+            />
+            <div className="flex flex-wrap gap-6 pt-4">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-vshine-coral rounded-full"></div>
+                <span className="text-vshine-teal font-semibold">Advanced Technology</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-vshine-coral rounded-full"></div>
+                <span className="text-vshine-teal font-semibold">Certified Specialists</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-vshine-coral rounded-full"></div>
+                <span className="text-vshine-teal font-semibold">Natural Results</span>
+              </div>
+            </div>
+            <Button className="btn-primary text-lg px-8 py-4">
+              Schedule Consultation
+            </Button>
+          </div>
+          
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-3xl shadow-2xl"
+            >
+              <img 
+                src="/lovable-uploads/87177dec-2572-44b6-aa1f-cd3db8436a3f.png" 
+                alt="Premium Hair Treatment Procedure"
+                className="w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-vshine-teal/20 to-transparent"></div>
+            </motion.div>
+            
+            {/* Floating stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-vshine-beige/50"
+            >
+              <div className="text-center">
+                <div className="text-3xl font-bold text-vshine-teal">5000+</div>
+                <div className="text-sm text-gray-600">Successful Procedures</div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="absolute -top-6 -right-6 bg-vshine-coral text-white p-6 rounded-2xl shadow-xl"
+            >
+              <div className="text-center">
+                <div className="text-3xl font-bold">98%</div>
+                <div className="text-sm opacity-90">Success Rate</div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Moving Ticker */}
-        <div className="mb-16">
-          <MovingTicker speed={30} className="py-8">
-            {tickerCards.map((card, index) => (
-              <motion.div
-                key={index}
-                className="flex-shrink-0 bg-gradient-to-br from-vshine-coral/10 to-vshine-teal/10 rounded-2xl p-6 min-w-[200px] border border-vshine-coral/20"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-2xl mb-2">{card.icon}</div>
-                <div className="text-2xl font-bold text-vshine-teal">{card.title}</div>
-                <div className="text-sm text-gray-600">{card.subtitle}</div>
-              </motion.div>
-            ))}
-          </MovingTicker>
-        </div>
-
+        {/* Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div 
