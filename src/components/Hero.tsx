@@ -1,10 +1,13 @@
+
 import HeroBackground from './hero/HeroBackground';
 import HeroContent from './hero/HeroContent';
 import HeroStats from './hero/HeroStats';
 import HeroTreatmentCard from './hero/HeroTreatmentCard';
 import HeroFloatingBadges from './hero/HeroFloatingBadges';
+
 const Hero = () => {
-  return <section id="home" className="relative min-h-screen overflow-hidden">
+  return (
+    <section id="home" className="relative min-h-screen overflow-hidden">
       <HeroBackground />
 
       <div className="container-custom relative z-10">
@@ -17,7 +20,20 @@ const Hero = () => {
 
           {/* Visual Content - 5 columns */}
           <div className="lg:col-span-5 relative">
-            
+            <div className="relative">
+              {/* Main Medical Procedure Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white p-4">
+                <img 
+                  src="/lovable-uploads/2061512d-9e34-4d6e-8d0c-e3d0d4ac9963.png" 
+                  alt="Advanced Hair Restoration Procedure" 
+                  className="w-full h-auto rounded-2xl object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Floating Medical Badges */}
+              <HeroFloatingBadges />
+            </div>
           </div>
         </div>
       </div>
@@ -31,6 +47,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

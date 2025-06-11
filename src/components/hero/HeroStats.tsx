@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Headphones, Award } from 'lucide-react';
+import { Users, Shield, Award } from 'lucide-react';
 
 const HeroStats = () => {
   return (
@@ -12,8 +12,9 @@ const HeroStats = () => {
               <Users className="w-6 h-6 text-blue-600" />
             </div>
           </div>
-          <div className="text-sm font-semibold text-gray-700 mb-1">Free support</div>
-          <div className="text-xs text-gray-500 leading-relaxed">It is a long established fact that a reader.</div>
+          <div className="text-2xl font-bold text-vshine-teal mb-1">5000+</div>
+          <div className="text-sm font-semibold text-gray-700 mb-1">Procedures</div>
+          <div className="text-xs text-gray-500 leading-relaxed">Successfully completed</div>
         </CardContent>
       </Card>
       
@@ -21,11 +22,12 @@ const HeroStats = () => {
         <CardContent className="p-0">
           <div className="flex justify-center mb-3">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-              <Headphones className="w-6 h-6 text-green-600" />
+              <Shield className="w-6 h-6 text-green-600" />
             </div>
           </div>
-          <div className="text-sm font-semibold text-gray-700 mb-1">Online support</div>
-          <div className="text-xs text-gray-500 leading-relaxed">It is a long established fact that a reader.</div>
+          <div className="text-2xl font-bold text-vshine-teal mb-1">98%</div>
+          <div className="text-sm font-semibold text-gray-700 mb-1">Success Rate</div>
+          <div className="text-xs text-gray-500 leading-relaxed">Patient satisfaction</div>
         </CardContent>
       </Card>
       
@@ -36,8 +38,9 @@ const HeroStats = () => {
               <Award className="w-6 h-6 text-purple-600" />
             </div>
           </div>
-          <div className="text-sm font-semibold text-gray-700 mb-1">Chamber service</div>
-          <div className="text-xs text-gray-500 leading-relaxed">It is a long established fact that a reader.</div>
+          <div className="text-2xl font-bold text-vshine-teal mb-1">15+</div>
+          <div className="text-sm font-semibold text-gray-700 mb-1">Years Experience</div>
+          <div className="text-xs text-gray-500 leading-relaxed">Medical expertise</div>
         </CardContent>
       </Card>
     </div>
