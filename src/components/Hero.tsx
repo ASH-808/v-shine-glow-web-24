@@ -1,13 +1,10 @@
-
 import HeroBackground from './hero/HeroBackground';
 import HeroContent from './hero/HeroContent';
 import HeroStats from './hero/HeroStats';
 import HeroTreatmentCard from './hero/HeroTreatmentCard';
 import HeroFloatingBadges from './hero/HeroFloatingBadges';
-
 const Hero = () => {
-  return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+  return <section id="home" className="relative min-h-screen overflow-hidden">
       <HeroBackground />
 
       <div className="container-custom relative z-10">
@@ -20,17 +17,7 @@ const Hero = () => {
 
           {/* Visual Content - 5 columns */}
           <div className="lg:col-span-5 relative">
-            <div className="relative flex justify-center">
-              {/* Doctor Image */}
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/223f768e-82ff-4f0d-9d21-fecdd2dd7bea.png" 
-                  alt="Healthcare Professional" 
-                  className="w-full max-w-md h-auto object-contain relative z-10"
-                />
-                <HeroFloatingBadges />
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -44,8 +31,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
