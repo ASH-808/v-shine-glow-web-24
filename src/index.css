@@ -71,4 +71,57 @@
   .text-gradient {
     @apply bg-gradient-to-r from-vshine-teal to-vshine-coral bg-clip-text text-transparent;
   }
+
+  /* Enhanced animations for creative hero */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float.delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .animate-float.delay-1000 {
+    animation-delay: 1s;
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    33% { 
+      transform: translateY(-10px) rotate(1deg); 
+    }
+    66% { 
+      transform: translateY(-5px) rotate(-1deg); 
+    }
+  }
+
+  @keyframes scale-x {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Gradient text animation */
+  .text-gradient {
+    background: linear-gradient(45deg, #F27B7B, #043B47, #F27B7B);
+    background-size: 300% 300%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
