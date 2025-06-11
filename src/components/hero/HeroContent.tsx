@@ -2,6 +2,7 @@
 import { ArrowRight, Star, CheckCircle, Stethoscope, Phone, Play, Users, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import BlurText from '@/components/ui/blur-text';
 
 const HeroContent = () => {
   return (
@@ -14,24 +15,21 @@ const HeroContent = () => {
         </Badge>
       </div>
 
-      {/* Main Headline */}
+      {/* Main Headline with BlurText */}
       <div className="space-y-6">
-        <h1 className="text-5xl lg:text-7xl font-bold font-heading leading-tight">
-          <span className="text-gray-900">Precision hair</span>
-          <br />
-          <span className="text-gray-900">restoration with</span>
-          <br />
-          <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-vshine-coral via-pink-500 to-red-400 bg-clip-text text-transparent">
-              expert care.
-            </span>
-            <div className="absolute -bottom-3 left-0 w-full h-2 bg-gradient-to-r from-vshine-coral to-pink-500 rounded-full transform scale-x-0 animate-[scale-x_1.5s_ease-out_0.8s_forwards] origin-left"></div>
-          </span>
-        </h1>
+        <BlurText 
+          text="Precision hair restoration with expert care."
+          className="text-5xl lg:text-7xl font-bold font-heading leading-tight"
+          delay={100}
+          animateBy="words"
+        />
         
-        <p className="text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
-          Experience advanced hair transplantation and restoration procedures performed by certified specialists using state-of-the-art technology for natural, lasting results.
-        </p>
+        <BlurText 
+          text="Experience advanced hair transplantation and restoration procedures performed by certified specialists using state-of-the-art technology for natural, lasting results."
+          className="text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed"
+          delay={150}
+          animateBy="words"
+        />
       </div>
 
       {/* CTA Buttons - Matching Website Style */}

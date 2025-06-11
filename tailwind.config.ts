@@ -34,13 +34,13 @@ export default {
 					foreground: '#043B47'
 				},
 				accent: {
-					DEFAULT: '#F27B7B', // Soft Coral
+					DEFAULT: '#fbb79c', // Updated to new coral color
 					foreground: '#FFFFFF'
 				},
 				// V-Shine brand colors
 				'vshine-teal': '#043B47',
 				'vshine-beige': '#E9DFCE',
-				'vshine-coral': '#F27B7B',
+				'vshine-coral': '#fbb79c', // Updated color
 				'vshine-light-beige': '#F5F1EB',
 				'vshine-dark-teal': '#032A33',
 				destructive: {
@@ -128,6 +128,20 @@ export default {
 					'100%': {
 						transform: 'scaleX(1)'
 					}
+				},
+				'bounce-in': {
+					'0%': {
+						transform: 'scale(0.3)',
+						opacity: '0'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						opacity: '0.8'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
@@ -136,7 +150,8 @@ export default {
 				'fade-in': 'fade-in 0.8s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'scale-x': 'scale-x 1s ease-out 0.5s forwards'
+				'scale-x': 'scale-x 1s ease-out 0.5s forwards',
+				'bounce-in': 'bounce-in 0.6s ease-out'
 			}
 		}
 	},

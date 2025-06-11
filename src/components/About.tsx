@@ -1,5 +1,7 @@
 
 import { Award, Heart, Users, Target } from 'lucide-react';
+import BlurText from '@/components/ui/blur-text';
+import { motion } from 'framer-motion';
 
 const About = () => {
   const values = [
@@ -26,28 +28,56 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-to-br from-vshine-light-beige to-white">
-      <div className="container-custom">
+    <section id="about" className="section-padding bg-gradient-to-br from-vshine-light-beige to-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-vshine-coral/10 rounded-full -translate-x-32 -translate-y-32"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-vshine-teal/10 rounded-full translate-x-24 translate-y-24"></div>
+      
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className="space-y-8">
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-vshine-teal mb-6">
-                Meet Our Founder
-              </h2>
-              <div className="bg-white/80 rounded-2xl p-6 shadow-lg border border-vshine-beige/50">
-                <h3 className="text-2xl font-bold text-vshine-teal mb-2">Mrs. Reena M.P.</h3>
+              <BlurText 
+                text="Meet Our Founder"
+                className="text-4xl lg:text-5xl font-bold text-vshine-teal mb-6"
+                delay={80}
+                animateBy="words"
+              />
+              <motion.div 
+                className="bg-white/80 rounded-2xl p-6 shadow-lg border border-vshine-beige/50 relative"
+                whileHover={{ scale: 1.02, y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="absolute top-2 right-2 w-8 h-8 bg-vshine-coral/20 rounded-full"></div>
+                <BlurText 
+                  text="Mrs. Reena M.P."
+                  className="text-2xl font-bold text-vshine-teal mb-2"
+                  delay={50}
+                  animateBy="words"
+                />
                 <p className="text-vshine-coral font-medium mb-4">Founder & Lead Specialist</p>
                 <p className="text-gray-600 leading-relaxed">
                   With over a decade of expertise in advanced hair transplantation and skincare, 
                   Mrs. Reena M.P. established V-Shine in 2021 with a vision to provide world-class 
                   aesthetic treatments with personalized care and guaranteed results.
                 </p>
-              </div>
+              </motion.div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-vshine-teal">Our Mission</h3>
+              <BlurText 
+                text="Our Mission"
+                className="text-2xl font-bold text-vshine-teal"
+                delay={60}
+                animateBy="words"
+              />
               <p className="text-gray-600 leading-relaxed">
                 To provide premium hair transplant and skincare solutions that restore confidence 
                 and enhance natural beauty through advanced techniques, personalized care, and 
@@ -55,34 +85,61 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-vshine-teal text-white rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-2">Established 2021</h4>
-              <p className="text-vshine-beige">
-                From our founding, we've been dedicated to transforming lives through 
-                safe, effective, and comfortable aesthetic treatments.
-              </p>
-            </div>
-          </div>
+            <motion.div 
+              className="bg-gradient-to-r from-vshine-teal to-vshine-dark-teal text-white rounded-xl p-6 relative overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="absolute top-0 right-0 w-16 h-16 bg-vshine-coral/20 rounded-full -translate-y-8 translate-x-8"></div>
+              <div className="relative z-10">
+                <h4 className="text-xl font-bold mb-2">Established 2021</h4>
+                <p className="text-vshine-beige">
+                  From our founding, we've been dedicated to transforming lives through 
+                  safe, effective, and comfortable aesthetic treatments.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
 
           {/* Values Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             {values.map((value, index) => (
-              <div 
+              <motion.div 
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg card-hover border border-vshine-beige/50"
+                className="bg-white rounded-xl p-6 shadow-lg card-hover border border-vshine-beige/50 relative overflow-hidden"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <div className="mb-4">
-                  {value.icon}
+                <div className="absolute top-0 right-0 w-12 h-12 bg-vshine-coral/10 rounded-full -translate-y-6 translate-x-6"></div>
+                <div className="mb-4 relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 15, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {value.icon}
+                  </motion.div>
                 </div>
-                <h4 className="text-lg font-bold text-vshine-teal mb-2">
-                  {value.title}
-                </h4>
+                <BlurText 
+                  text={value.title}
+                  className="text-lg font-bold text-vshine-teal mb-2"
+                  delay={30}
+                  animateBy="words"
+                />
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {value.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
