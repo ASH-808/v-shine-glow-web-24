@@ -33,6 +33,10 @@
     @apply border-border;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-vshine-light-beige text-vshine-teal font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -57,7 +61,7 @@
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-12 px-4 sm:py-16 sm:px-6 lg:px-8;
   }
   
   .container-custom {
@@ -122,6 +126,17 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  /* Mobile-first responsive design improvements */
+  @media (max-width: 640px) {
+    .section-padding {
+      @apply py-8 px-4;
+    }
+    
+    .container-custom {
+      @apply px-4;
     }
   }
 }
